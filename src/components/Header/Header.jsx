@@ -4,8 +4,22 @@ import SendIcon from "@mui/icons-material/Send";
 import { Link, NavLink } from "react-router-dom";
 import { styled } from "@mui/material/styles";
 import { orange, purple } from "@mui/material/colors";
+import Nav from "../Navbar/Nav";
+import MobileNav from "../Navbar/MobileNav";
 
 const Header = () => {
+  const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 768);
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 768);
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const ColorButton = styled(Button)(({ theme }) => ({
     color: theme.palette.getContrastText(purple[500]),
     backgroundColor: orange[800],
@@ -21,54 +35,10 @@ const Header = () => {
           <div className="text-orange-500 font-bold tracking-wider text-2xl">
             <Link to="/">Logo</Link>
           </div>
-          <nav className="max-md:hidden">
-            <ul className="flex flex-row gap-8 flex-wrap  justify-center align-middle">
-              <NavLink
-                to="/"
-                className={({ isActive }) =>
-                  `hover:text-orange-600 transition-all ${
-                    isActive ? "text-orange-700" : "text-gray-400"
-                  }`
-                }
-              >
-                <li>Home</li>
-              </NavLink>
+          {isMobile ? <MobileNav /> : <Nav />}
 
-              <NavLink
-                to="/about"
-                className={({ isActive }) =>
-                  `hover:text-orange-600 transition-all ${
-                    isActive ? "text-orange-700" : "text-gray-400"
-                  }`
-                }
-              >
-                <li>About</li>
-              </NavLink>
-
-              <NavLink
-                to="/contact"
-                className={({ isActive }) =>
-                  `hover:text-orange-600 transition-all ${
-                    isActive ? "text-orange-700" : "text-gray-400"
-                  }`
-                }
-              >
-                <li>Contact</li>
-              </NavLink>
-
-              <NavLink
-                to="/github"
-                className={({ isActive }) =>
-                  `hover:text-orange-600 transition-all ${
-                    isActive ? "text-orange-700" : "text-gray-400"
-                  }`
-                }
-              >
-                <li>Github</li>
-              </NavLink>
-            </ul>
-          </nav>
-          <div className="flex flex-wrap flex-row justify-center align-middle gap-4">
+          {/* right side */}
+          <div className="flex flex-wrap flex-row justify-center align-middle gap-4 max-md:hidden">
             <Link to="#">
               <div className="font-semibold hover:text-orange-600 max-md:hidden">
                 Login
