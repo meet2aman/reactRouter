@@ -29,7 +29,7 @@ const settings = [
     label: "Github",
   },
   {
-    route: "#",
+    route: "/user/hello",
     label: "Login",
   },
 ];

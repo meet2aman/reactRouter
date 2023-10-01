@@ -7,11 +7,14 @@ import {
   Route,
   createBrowserRouter,
   createRoutesFromElements,
+  HashRouter,
+  BrowserRouter,
+  createHashRouter,
 } from "react-router-dom";
-import { About, Contact, Github, Home, User } from "./components";
+import { About, Contact, Github, Home, User, Error } from "./components";
 import { githubInfo } from "./components/Github/Github";
 
-const router = createBrowserRouter(
+const router = createHashRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route path="" element={<Home />} />
@@ -19,6 +22,7 @@ const router = createBrowserRouter(
       <Route path="/contact" element={<Contact />} />
       <Route path="/github" element={<Github />} loader={githubInfo} />
       <Route path="user/:userId" element={<User />} />
+      <Route path="*" element={<Error />} />
     </Route>
   )
 );
