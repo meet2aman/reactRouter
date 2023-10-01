@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <div>
-        <div className=" bg-black text-white rounded-3xl mx-10 my-4 max-md:mx-4">
+        <div className=" dark:bg-black bg-white dark:text-white text-black rounded-3xl mx-10 my-4 max-md:mx-4">
           <div className="flex flex-wrap justify-center gap-10 lg:gap-80 items-center p-8 align-middle md:gap-5">
             <div>
               <img
@@ -42,7 +42,7 @@ export default function Home() {
       </div>
 
       <div>
-        <div className=" bg-black mx-10 my-4 rounded-3xl max-md:mx-4">
+        <div className=" dark:bg-black bg-white text-black dark:text-white mx-10 my-4 rounded-3xl max-md:mx-4">
           <div className="flex flex-wrap justify-center align-middle p-10 items-center lg:gap-80 gap-10 md:gap-5">
             <div>
               <img
@@ -51,8 +51,8 @@ export default function Home() {
                 alt="image2"
               />
             </div>
-            <h1 className="text-center text-2xl sm:text-5xl py-10 text-white font-medium">
-              Lorem Ipsum Yojo
+            <h1 className="text-center text-2xl sm:text-5xl py-10 font-medium">
+              Welcome Here !
             </h1>
           </div>
         </div>

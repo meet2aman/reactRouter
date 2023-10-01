@@ -7,17 +7,19 @@ const Github = () => {
   return (
     <>
       <div>
-        <div className="bg-black rounded-xl mx-10 my-4 text-white max-md:mx-4">
+        <div className="dark:bg-black bg-white rounded-xl mx-10 my-4  max-md:mx-4">
           <div className="flex flex-wrap justify-around items-center align-middle p-8  sm:text-2xl">
             <div className="rounded-xl">
               <img
                 src={data.avatar_url}
                 alt="github_picture"
-                className="rounded-full scale-[0.7]"
+                className="rounded-full scale-[0.7] shadow-xl shadow-black dark:shadow-xl dark:shadow-orange-700"
               />
             </div>
-            <div className="text-2xl text-white text-center ">
-              <p className="text-orange-600 mt-2 text-4xl sm:text-xxl">{data.name}</p>
+            <div className="text-2xl dark:text-white text-black text-center ">
+              <p className="text-orange-600 mt-2 text-4xl sm:text-xxl">
+                {data.name}
+              </p>
               <Link to={data.html_url} target="blank">
                 <p className="text-3xl text-orange-600 hover:text-orange-700 hover:underline">
                   Visit Github
@@ -26,11 +28,11 @@ const Github = () => {
 
               <p>
                 {" "}
-                Github repositories <span className="text-lime-500">
+                Github repositories <span className="text-lime-600">
                   {" "}
                   :
                 </span>{" "}
-                {data.public_repos}
+                <span className="text-orange-500">{data.public_repos}</span>
               </p>
             </div>
           </div>

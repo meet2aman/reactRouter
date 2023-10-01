@@ -1,11 +1,8 @@
 import React from "react";
-import Button from "@mui/material/Button";
-import SendIcon from "@mui/icons-material/Send";
-import { Link, NavLink } from "react-router-dom";
-import { styled } from "@mui/material/styles";
-import { orange, purple } from "@mui/material/colors";
+import { Link } from "react-router-dom";
 import Nav from "../Navbar/Nav";
 import MobileNav from "../Navbar/MobileNav";
+import ToggleSwitch from "../Toggle/Toggle";
 
 const Header = () => {
   const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 768);
@@ -20,43 +17,42 @@ const Header = () => {
     };
   }, []);
 
-  const ColorButton = styled(Button)(({ theme }) => ({
-    color: theme.palette.getContrastText(purple[500]),
-    backgroundColor: orange[800],
-    "&:hover": {
-      backgroundColor: orange[600],
-    },
-  }));
-
   return (
     <>
-      <header className="bg-black text-xl mx-10 mt-4 rounded-3xl tracking-wider max-md:mx-3 max-md:text-xm">
-        <div className="flex flex-wrap align-middle justify-between gap-9 text-white py-4 px-8">
+      <header className="dark:bg-black bg-white text-xl mx-10 mt-4 rounded-3xl tracking-wider max-md:mx-3 max-md:text-xm">
+        <div className="flex flex-wrap align-middle justify-between gap-9 text-white py-2 items-center px-8">
+          {/* left Side */}
           <div className="text-orange-500 font-bold tracking-wider text-2xl">
             <Link to="/">Logo</Link>
           </div>
-          {isMobile ? <MobileNav /> : <Nav />}
+          <div className="max-md:hidden">
+            {isMobile ? <MobileNav /> : <Nav />}
+          </div>
 
           {/* right side */}
-          <div className="flex flex-wrap flex-row justify-center align-middle gap-4 max-md:hidden">
-            <Link to="#">
-              <div className="font-semibold hover:text-orange-600 max-md:hidden">
-                Login
-              </div>
-            </Link>
-            <div>
+          {isMobile ? (
+            <div className="flex flex-wrap flex-row justify-center align-middle items-center">
               <Link to="#">
-                <ColorButton
-                  size="small"
-                  variant="contained"
-                  className="hover:bg-orange-600"
-                  endIcon={<SendIcon />}
-                >
-                  Get Start
-                </ColorButton>
+                <div className="font-semibold hover:text-orange-600">
+                  <MobileNav />
+                </div>
               </Link>
+              <div>
+                <ToggleSwitch />
+              </div>
             </div>
-          </div>
+          ) : (
+            <div className="flex flex-wrap flex-row justify-center align-middle items-center gap-4 max-md:hidden">
+              <Link to="#">
+                <div className="font-semibold dark:text-gray-600 text-black hover:text-orange-600 max-md:hidden">
+                  Login
+                </div>
+              </Link>
+              <div>
+                <ToggleSwitch />
+              </div>
+            </div>
+          )}
         </div>
       </header>
     </>

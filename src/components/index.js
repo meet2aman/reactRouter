@@ -6,5 +6,16 @@ import Home from "./Home/Home";
 import Github from "./Github/Github";
 import User from "./User/User";
 import Nav from "./Navbar/Nav";
+import ToggleSwitch from "./Toggle/Toggle";
 
-export { Header, Footer, About, Contact, Home, Github, User, Nav };
+export {
+  Header,
+  Footer,
+  About,
+  Contact,
+  Home,
+  Github,
+  User,
+  Nav,
+  ToggleSwitch,
+};

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   const date = new Date();
   return (
-    <footer className="bg-black rounded-3xl mx-10 max-md:mx-4 mb-4">
+    <footer className="dark:bg-black bg-white rounded-3xl mx-10 max-md:mx-4 mb-4">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">

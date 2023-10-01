@@ -48,7 +48,7 @@ const MobileNav = () => {
     <Box sx={{ flexGrow: 0 }}>
       <Tooltip title="Open Menu">
         <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-          <MenuIcon className="text-white" />
+          <MenuIcon className="dark:text-white" />
         </IconButton>
       </Tooltip>
       <Menu
@@ -68,11 +68,11 @@ const MobileNav = () => {
         onClose={handleCloseUserMenu}
       >
         {settings.map((setting) => (
-          <MenuItem key={setting.label} onClick={handleCloseUserMenu}>
-            <Link to={setting.route}>
+          <Link to={setting.route} key={setting.label}>
+            <MenuItem key={setting.label} onClick={handleCloseUserMenu}>
               <Typography textAlign="center">{setting.label}</Typography>
-            </Link>
-          </MenuItem>
+            </MenuItem>
+          </Link>
         ))}
       </Menu>
     </Box>
