@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import { Header, Footer } from "./components";
 import { ThemeProvider } from "./context/theme";
+import toast, { Toaster } from "react-hot-toast";
 
 const Layout = () => {
   const [themeMode, setThemeMode] = React.useState("dark");
@@ -22,6 +23,7 @@ const Layout = () => {
   return (
     <>
       <ThemeProvider value={{ themeMode, lightTheme, darkTheme }}>
+        <Toaster position="top-center" />
         <Header />
         <Outlet />
         <Footer />

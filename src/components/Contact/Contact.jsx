@@ -4,7 +4,7 @@ const Contact = () => {
   return (
     <>
       <div>
-        <div className="dark:bg-black text-black bg-white dark:text-white rounded-3xl mx-10 my-4 max-md:mx-4">
+        <div className="dark:bg-black text-black bg-white dark:text-white rounded-xl mx-10 my-4 max-md:mx-4">
           <div className="grid grid-cols-1 md:grid-cols-2 p-8">
             <div className="p-4 mr-2 bg-gray-100 rounded-xl">
               <h1 className="text-3xl sm:text-4xl text-gray-800 font-extrabold tracking-tight">

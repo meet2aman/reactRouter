@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Nav from "../Navbar/Nav";
 import MobileNav from "../Navbar/MobileNav";
 import ToggleSwitch from "../Toggle/Toggle";
@@ -43,8 +43,15 @@ const Header = () => {
             </div>
           ) : (
             <div className="flex flex-wrap flex-row justify-center align-middle items-center gap-4 max-md:hidden">
-              <Link to="/user/hello">
-                <div className="font-semibold text-gray-600 dark:hover:text-orange-600 max-md:hidden">
+              <Link
+                to="/login"
+                // className={({ isActive }) =>
+                //   `transition-all font-semibold text-gray-600 dark:hover:text-orange-600 max-md:hidden ${
+                //     isActive ? "text-orange-700" : "text-gray-700"
+                //   }`
+                // }
+              >
+                <div className="transition-all font-semibold text-gray-600 dark:hover:text-orange-600 max-md:hidden">
                   Login
                 </div>
               </Link>

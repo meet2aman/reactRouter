@@ -11,7 +11,7 @@ import {
   BrowserRouter,
   createHashRouter,
 } from "react-router-dom";
-import { About, Contact, Github, Home, User, Error } from "./components";
+import { About, Contact, Github, Home, User, Error, Login } from "./components";
 import { githubInfo } from "./components/Github/Github";
 
 const router = createHashRouter(
@@ -23,6 +23,7 @@ const router = createHashRouter(
       <Route path="/github" element={<Github />} loader={githubInfo} />
       <Route path="user/:userId" element={<User />} />
       <Route path="*" element={<Error />} />
+      <Route path="/login" element={<Login />} />
     </Route>
   )
 );

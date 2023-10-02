@@ -8,6 +8,7 @@ import User from "./User/User";
 import Nav from "./Navbar/Nav";
 import ToggleSwitch from "./Toggle/Toggle";
 import Error from "./Error/Error";
+import Login from "./Login/Login";
 
 export {
   Header,
@@ -20,4 +21,5 @@ export {
   Nav,
   ToggleSwitch,
   Error,
+  Login,
 };

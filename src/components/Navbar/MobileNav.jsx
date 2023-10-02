@@ -1,12 +1,12 @@
 import * as React from "react";
-
-import Box from "@mui/material/Box";
+// import CssBaseline from "@mui/material/CssBaseline";
+// import Box from "@mui/material/Box";
 import MenuIcon from "@mui/icons-material/Menu";
 
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
-import Avatar from "@mui/material/Avatar";
+
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
@@ -29,7 +29,7 @@ const settings = [
     label: "Github",
   },
   {
-    route: "/user/hello",
+    route: "/login/",
     label: "Login",
   },
 ];
@@ -45,7 +45,8 @@ const MobileNav = () => {
     setAnchorElUser(null);
   };
   return (
-    <Box sx={{ flexGrow: 0 }}>
+    <div>
+      {/* <Box sx={{ flexGrow: 0 }}> */}
       <Tooltip title="Open Menu">
         <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
           <MenuIcon className="dark:text-white" />
@@ -75,7 +76,8 @@ const MobileNav = () => {
           </Link>
         ))}
       </Menu>
-    </Box>
+      {/* </Box> */}
+    </div>
   );
 };
 
